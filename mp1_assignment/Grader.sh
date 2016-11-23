@@ -7,8 +7,8 @@
 #* 
 #***********************
 #!/bin/sh
-function contains () {
-  	local e
+function contains(){
+    local e
   	for e in "${@:2}"
 	do 
 		if [ "$e" == "$1" ]; then 

@@ -409,7 +409,7 @@ void MP1Node::nodeLoopOps() {
     
     for (auto i = 0u; i < memberNode->memberList.size(); i++) {
         auto& e = memberNode->memberList[i];
-        if (par->getcurrtime() - e.timestamp > CFG_GOSSIP_ENTRY_EXPIRATION) {
+        if (par->getcurrtime() - e.timestamp > 2*CFG_GOSSIP_ENTRY_EXPIRATION) {
             auto addr = getAddr(e.id, e.port);
             log->LOG(&memberNode->addr, "removing %s w/ hb %d ts:%d", addr.getAddress().c_str(), e.heartbeat, e.port);
             auto a = getAddr(e.id, e.port);
